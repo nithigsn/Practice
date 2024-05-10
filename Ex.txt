@@ -1,1 +1,261 @@
-Hello Everyone
+                                REACT QUESTIONS
+
+1. mpm vs npx?
+npx ( Node Package eXecute ):
+Execute package without any preior installing of packages.
+npm ( Node Package Manager ):
+Use to manage, install and remove packages for Node JS
+
+
+2.what is react ?
+React is a JavaScript library for building user interfaces.
+Created by Facebook / Meta.
+React is used to build single-page applications.
+React is a tool for building UI components.
+Component based architecture
+
+
+ components?
+-Components has names start with Capital letters
+-In react a function is a component only if It has Name start with Capital letter.
+ NOTE React apps are made out of components.
+A component is a piece of the UI (user interface) that has its own logic and appearance.
+A component can be as small as a button, or as large as an entire page.
+React components are JavaScript functions that return markup.
+
+diff between components and other tags
+<SampleComp> Components has names start with Capital letters
+<p></p> Always in small letters
+
+
+class components
+-uses javascript class to create components
+-is a state full component (by default has a state)
+
+function components
+-uses javascript function to create components.
+-is a stateless component. (doesn't have state can achieve by using hooks)
+-we will achieve all class component features in functional component using hooks.   
+
+
+
+3.Single Page Application?
+page won't reload
+by index.html page only page renders
+rewriting the current page rather than loading entire new pages
+
+
+4.Virtual DOM  (DOM-Document Object Model ==> represents structure of an HTML and XML as tree like structure)
+creates a virtual dom(copy of an DOM) in memory
+instead of manipulating the browser dom react creates a virtual DOM in memory
+where is does all the manipulating before making changes in the DOM
+- only changes what needs to be changed
+- finds what changes have been made and changes only what needs to be changed
+
+5.React History ? 
+-before 16.8 were using class components
+version 16.8 (after 16.8 functional component came by using Hooks) has major changes
+ Current React latest version 18
+
+6.How React Works?
+-all our component jsx files are converted to pure js file named as bundle.js
+and included in <head> tag
+- mainly all our components are loaded inisde <div id="root">
+
+
+7.JSX in React ?
+ Java Script XML 
+JSX VS JS HTML -> XML -> XHTML ->  JS -> JSX
+
+XML -> used to store data in html format
+       follows  rules 
+      - always tag name should be smaller.
+      - always if there is open tag then close tag should be there.
+      - self close tag must be closed <br/>
+
+XHTML -> Stricter Version Of HTML
+       - case senstive
+       - tags should be closed even for self closing tags
+
+JS  -> adding HTML tags will throw error   (Important)
+JSX ->  IN REACT WE CAN CREATE COMPONENTS INSIDE BOTH .js and .jsx file.
+
+BECAUSE React consider .js as .jsx file only.
+
+In react we can have html tags within javascript file.
+
+In pure JS or vanilla javascript we cannot have html tags within javascript file. It will through error.
+
+
+       
+
+-might ask what is XHTML XML HTML JS JSX
+-difference between above the mentioned.
+
+
+
+8.Expression in JSX
+   use curly bases{} eg-> <p> I love { 1000 * 3} </p>
+
+
+9.Displaying Data
+ we can use curly bases{} to display values;
+export default function LeaveLetter() {
+
+     let name = "roshan";
+
+     let problem = "cold and Cough";
+
+     return (
+
+         <p> My name is {name}, As I am suffering from {problem} </p>
+
+      );
+
+}
+
+10.Conditional Rendering
+-using if
+-using switch
+-using ternary operator ?:
+
+11.what is rendering list?
+
+It is about displaying items within the array.
+
+To display, we use map concept.
+
+steps:
+
+you need a array to render list.
+
+use below syntax.
+
+{
+
+      arr.map( ( value ) => {
+
+         return <li> { value } </li>
+
+      })
+
+}
+You can replace above markup with component also.
+
+11.Events ?
+actions or occurance happens in browser or web page
+interactions like clikcs 
+achieved by JS callBack
+onCLick onChange
+
+used to handle events like button click.
+steps
+You need any function, can be
+normal function,
+function expression,
+arrow function
+pass your function to handle events
+function handleClick() { }
+
+onClick = { handleClick }
+
+by default handleClick will accept a parameter named event
+
+event mostly used for below purpose.
+
+onClick={()=> handleClick(1)}
+
+ preventDefault?
+eg: event.preventDefault();
+
+The preventDefault( ) method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+
+For example, this can be useful when:
+
+Clicking on a "Submit" button, prevent it from submitting a form
+
+Clicking on a link, prevent the link from following the URL
+ 
+
+
+12.Hooks?
+functions name starts with use.
+useState is a built in hook provided by React.
+Hooks are more restrictive than other functions. You can only call Hooks at the top of your components (or other Hooks).
+
+12.States ?
+when we need to update something in screen we use state
+The variable which need to updated on screen should be kept as state.
+Components has a built in state object
+When the state object changes, the component re-renders.
+
+syntax
+const [ variable , setVariable ] = useState( initialValue );
+
+eg
+const [ count, setCount ] = useState(10);
+function handleLike() {    
+        setCount(count + 1);
+}
+
+
+13.why use useState?
+Often, you’ll want your component to “remember” some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add state to your component.
+
+
+14.One Way Binding ?
+happens in one direction
+changes in the data automatically updates in the screen but UI updates wont update in data
+
+can achieve two way binding like events eg-> onChange
+
+
+props?
+Sharing data between components
+
+Parent to child ==>
+passing values down to children comp using props
+
+syntax
+<ComponentName  count={100}  name={"doremon"}/>
+
+function ComponentName({ count, name })
+
+CHILD TO PARENT
+passing values up to parent component using function ( call back function )
+<Comp setCount={setCount} handleClick={handleClick}/>
+function Comp({setCount,handleClick}){
+}
+
+
+useEffect
+
+useEffect is a React Hook that lets you synchronize a component with an external system.
+
+do something when change in dependencies
+
+mostly used to connect APIs
+
+doing asynchronous tasks
+
+
+react.StrictMode ?
+- should remove to avoid loading twice
+-lets you to find common bugs in your component early during development
+
+development only behaviors
+extra time to find bug
+deprciated api
+
+
+rendering-->
+First time React display the content in webpage by reading components.
+
+re-rendering-->
+ On any change in props, state or useEffect will reload the component.
+
+re-conciliation-->
+The process of rendering page using virtual DOM and diff algorithm.
+
+
+
